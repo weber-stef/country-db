@@ -31,3 +31,14 @@
     transform: rotate(360deg);
   }
 }
+.content{
+  display: flex;
+  flex-flow: row;
+  background-color: green;
+
+}
+div.content div {
+  width: 100px;
+  height: 100px;
+  margin: 30px;
+}
