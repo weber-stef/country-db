@@ -1,13 +1,22 @@
-import React from "react";
+import React, { Component } from 'react';
+import AppContext from './AppContext';
 
-const SearchBar = props => {
-  return (
-    < input
-      value={props.searchTerm}
-      onChange={props.onSearchInputChangeHandler}
-      placeholder="Search for countries"
-    />
-  );
-};
+export default class SearchBar extends Component {
 
-export default SearchBar;
+  filterCountry = React.createRef();
+
+  render() {
+    return (
+      <AppContext.Consumer>
+        {context =>
+          <header className="header">
+            <label htmlFor="search">Search country:</label>
+            <input name="search" type="text" ref={this.filterCountry} onChange={() => { context.filterResults(this.filterCountry) }} placeholder={`Look for country`} />
+          </header>
+        }
+      </AppContext.Consumer>
+    );
+  }
+
+}
+
