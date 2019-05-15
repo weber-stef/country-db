@@ -37,8 +37,11 @@
   background-color: green;
 
 }
-div.content div {
-  width: 100px;
-  height: 100px;
+#root > div > main {
+  
+
   margin: 30px;
+}
+.pointer{
+  cursor: pointer;
 }

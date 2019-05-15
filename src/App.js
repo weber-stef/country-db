@@ -8,36 +8,9 @@ import './App.css';
 
 
 export default class App extends Component {
-
-  constructor(props) {
-    super()
-
-    this.state = {
-      results: null,
-      searchTerm: "germany",
-      name: "",
-      region: "",
-      subregion: "",
-      translations: "",
-      flag: "",
-      search: () => {
-        fetch(`https://restcountries.eu/rest/v2/all`)
-          .then(response => response.json())
-          .then(data => this.setState({ results: data }));
-
-      }
-    }
-  }
-
-  componentDidMount() {
-    this.state.search()
-  }
-
   render() {
 
     return (
-      this.state.results &&
-
       <AppProvider>
 
         <SearchBar />

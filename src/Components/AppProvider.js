@@ -5,11 +5,12 @@ export default class AppProvider extends Component {
   state = {
     searchTerm: "",
     results: null,
-    chosenCountry: "Germany",
+    chosenCountry: "",
     search: (searchTerm = "all") => {
       fetch(`https://restcountries.eu/rest/v2/all`)
         .then(response => response.json())
-        .then(data => this.setState({ results: data }));
+        .then(data => this.setState({ results: data, chosenCountry: data[62] }));
+      // chosen country[62] zeigt nun Dänemark als default an
     },
     handleClick: (e) => {
       let laenderInfo;

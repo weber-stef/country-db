@@ -8,7 +8,7 @@ export default class SideBar extends Component {
       <AppContext.Consumer>
         {context =>
           context.results.map((country, index) =>
-            <li key={index} onClick={context.handleClick}>
+            <li key={index} className="pointer" onClick={context.handleClick}>
               {country.name}
 
             </li>)

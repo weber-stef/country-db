@@ -8,7 +8,7 @@ export default class Details extends Component {
       <AppContext.Consumer>
         {(laenderinhalte) => (
           <div><h1>{laenderinhalte.chosenCountry.name}</h1>
-            <p>{laenderinhalte.chosenCountry.population}</p>
+            <p>{laenderinhalte.chosenCountry.population} Inhabitants </p>
 
 
           </div>
