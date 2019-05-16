@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import AppContext from './AppContext';
+import NumberFormat from 'react-number-format';
 
 export default class Details extends Component {
 
@@ -21,8 +22,9 @@ export default class Details extends Component {
             //               }
             //             }
             < div > <h1>{laenderinhalte.chosenCountry.name}</h1>
-              <p>{laenderinhalte.chosenCountry.population} Inhabitants are living in the country, many of them in the Capital, whose name is {laenderinhalte.chosenCountry.capital}</p>
-              <p>{laenderinhalte.chosenCountry.languages.length} {laenderinhalte.chosenCountry.languages.length > 1 ? ' languages are spoken' : '  language is spoken '} in the country of {laenderinhalte.chosenCountry.name}, which is part of the {laenderinhalte.chosenCountry.region}-region in the subregion of {laenderinhalte.chosenCountry.subregion} </p>
+              <p>{<NumberFormat value={laenderinhalte.chosenCountry.population} displayType={'text'} thousandSeparator={true} />} Inhabitants are living in the country, many of them in the Capital, whose name is {laenderinhalte.chosenCountry.capital}.</p>
+              <p>{laenderinhalte.chosenCountry.languages.length} {laenderinhalte.chosenCountry.languages.length > 1 ? ' languages are spoken' : '  language is spoken '} in the country of {laenderinhalte.chosenCountry.name}, which is part of the {laenderinhalte.chosenCountry.region}
+                {laenderinhalte.chosenCountry.subregion ? ' in the subregion of ' : ''}{laenderinhalte.chosenCountry.subregion}. </p>
 
               This is {laenderinhalte.chosenCountry.name}'s Flag:
             <br /> <br />
